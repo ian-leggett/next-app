@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# next-app
 
-## Getting Started
+A deliberately simple to-do app built with [Next.js](https://nextjs.org). It exists as a boilerplate for testing AI tooling, not as a real product.
 
-First, run the development server:
+You can add, complete and delete tasks. State lives in memory only, so a page refresh clears the list.
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command            | Description                                 |
+| ------------------ | ------------------------------------------- |
+| `npm run dev`      | Start the dev server                        |
+| `npm run build`    | Create a production build                   |
+| `npm start`        | Serve the production build                  |
+| `npm run lint`     | Run ESLint                                  |
+| `npm test`         | Run unit tests with Vitest (watch mode)     |
+| `npm run test:e2e` | Run Playwright end-to-end and a11y tests    |
 
-## Learn More
+Before running the e2e tests for the first time, install the browser with `npx playwright install chromium`.
 
-To learn more about Next.js, take a look at the following resources:
+## Project layout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/app/page.tsx`: the home page
+- `src/app/ui/todo-list.tsx`: the to-do list component
+- `src/app/**/*.test.tsx`: unit tests (Vitest and Testing Library)
+- `e2e/`: Playwright tests, including axe accessibility checks
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## CI
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+GitHub Actions (`.github/workflows/ci.yml`) runs lint, type checking, unit tests and the Playwright suite on every pull request and push to `main`.
