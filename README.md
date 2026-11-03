@@ -36,3 +36,5 @@ Before running the e2e tests for the first time, install the browser with `npx p
 ## CI
 
 GitHub Actions (`.github/workflows/ci.yml`) runs lint, type checking, unit tests and the Playwright suite on every pull request and push to `main`.
+
+Preview probe 1
