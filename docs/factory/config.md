@@ -10,10 +10,9 @@ Written by `factory-init`. Values are JSON. Edit with care: the lanes read this 
 | `status_field_id` | `"PVTSSF_lAHOAJrxPs4BpLzqzhnojOw"` |
 | `status_options` | `{"Backlog":"09fc505c","Ready":"3013bf69","In progress":"1008185e","QA Review":"850ed673","In staging":"24c25148","Done":"5888391e"}` |
 | `base_branch` | `"main"` |
-| `smoke_command` | `"npm run test:e2e"` |
-| `bypass_secret_file` | `"/Users/ianleggett/.factory/next-app"` |
-| `dev_command` | `"npm run dev -- --port $PORT"` |
-| `verify_commands` | `["npx tsc --noEmit","npx vitest run","npm run lint"]` |
+| `smoke_command` | `"npm run smoke"` |
+| `bypass_secret_file` | `"/Users/ianleggett/.factory/next-app/x-vercel-protection-bypass.txt"` |
+| `e2e_command` | `"npx playwright test"` |
 | `bounce_cap` | `5` |
 | `stuck_repeats` | `2` |
 | `parallel_cap` | `3` |
